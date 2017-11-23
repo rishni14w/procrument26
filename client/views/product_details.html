@@ -1,0 +1,25 @@
+<a href="#!/books">Go Back</a>
+<div class="panel panel-primary" ng-init="getProduct()">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{product.name}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="thumbnail" src="{{product.image_url}}">
+            </div>
+            <div class="col-md-8">
+                <p>{{product.description}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Category :{{product.category}}</li>
+                    <li class="list-group-item">Price : {{product.price}}</li>
+                    <li class="list-group-item">Rate : {{product.rate}}</li>
+                    <li class="list-group-item">Supplier : {{product.supplier}}</li>
+                </ul>
+                <!--<a href="{{product.buy_url}}" class="btn btn-primary">Buy</a>-->
+                <a href="#!/products/edit/{{product._id}}" class="btn btn-default">Edit</a>
+                <a href="#!" ng-click="removeBook(product._id)" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
