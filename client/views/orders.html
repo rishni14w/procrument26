@@ -27,7 +27,7 @@
                     <td>{{requisition.supplier}}</td>
                     <td>{{requisition.requiredDate}}</td>
                     <td>{{requisition.approver}}</td>
-                    <td>{{requisition.status}}</td>
+                    <td><span ng-class="{'color-red': requisition.status === 'Rejected', 'color-blue': requisition.status === 'Pending', 'color-green': requisition.status === 'Approved'}">{{requisition.status}}</span></td>
                     <td>{{requisition.create_date}}</td>
                     <td><a class="btn btn-primary" href="#!/orders/details/{{requisition._id}}">View</a></td>
                 </tr>
