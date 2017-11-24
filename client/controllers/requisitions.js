@@ -81,5 +81,19 @@ myApp.controller('RequisitionsController',['$scope','$http','$location','$routeP
         $http.put('/api/approveOrders'+id),$scope.requisitions.then(sucessCallback, errorCallback);
         window.location.href='#!/orders';
     }
+    $scope.getRequ = function () {
+        var id = $routeParams.id;
+        $http.get('/api/requisitions/'+id).then(successCallback,errorCallback);
+        function successCallback(response)
+        {
+            $scope.requisition=response.data;
+            console.log(response.data);
+        }
+        function errorCallback(error)
+        {
+            console.log('err from getRequisition')
+        }
+    }
+
     //-------------
 }]);
