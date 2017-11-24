@@ -49,6 +49,14 @@ myApp.config(function ($routeProvider) {
             controller:'RequisitionsController',
             templateUrl:'views/approveOrders.html'
         })
+        .when('/orders/accept/:id',{
+            controller:'RequisitionsController',
+            templateUrl:'views/orders.html'
+        })
+        .when('/orders/reject/:id',{
+            controller:'RequisitionsController',
+            templateUrl:'views/orders.html'
+        })
         .otherwise({
             redirectTo:'/'
         });
