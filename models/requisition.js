@@ -77,13 +77,13 @@ module.exports.deleteRequisition = function (id,callback) {
 
 //--------------Sewmi-------
 //ApproveRequestion
-module.exports.acceptRequisition= function(id, requestion,callback){
+module.exports.acceptRequisition= function(id, requisition,callback){
     var query={_id:id};
     var update={approver:"Accountant",status:"Approved"};
     Requisition.findOneAndUpdate(query,update,options,callback);
 }
 //RejectRequestion
-module.exports.rejectRequisition= function(id, requestion,callback){
+module.exports.rejectRequisition= function(id, requisition,callback){
     var query={_id:id};
     var update={approver:"Accountant",status:"Rejected"};
     Requisition.findOneAndUpdate(query,update,options,callback);
