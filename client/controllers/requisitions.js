@@ -70,4 +70,16 @@ myApp.controller('RequisitionsController',['$scope','$http','$location','$routeP
             console.log('err from removeRequisition')
         }
     }
+
+    //--------------Sewmi-------
+    $scope.acceptRequisition = function (id) {
+        $http.put('/api/approveOrders'+id),$scope.requisitions.then(sucessCallback, errorCallback);
+        window.location.href='#!/orders';
+    }
+
+    $scope.rejectRequisition = function (id) {
+        $http.put('/api/approveOrders'+id),$scope.requisitions.then(sucessCallback, errorCallback);
+        window.location.href='#!/orders';
+    }
+    //-------------
 }]);
