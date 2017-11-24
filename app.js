@@ -152,7 +152,7 @@ app.delete('/api/requisitions/:_id',function(req,res){
 
 //---sewmi----
 //Approve-Orders
-app.put('/api/requisitions/:_id',function(req,res){
+app.put('/api/orders/details/:_id',function(req,res){
     var id=req.params._id;
     var requisition = req.body;
     Requisition.acceptRequisition(id,requisition,{}, function (err,requisition) {
@@ -162,9 +162,9 @@ app.put('/api/requisitions/:_id',function(req,res){
         }
         res.json(requisition);
     });
+
 });
-//Reject-Orders
-app.put('/api/requisitions/:_id',function(req,res){
+app.put('/api/orders/details/:_id',function(req,res){
     var id=req.params._id;
     var requisition = req.body;
     Requisition.rejectRequisition(id,requisition,{}, function (err,requisition) {
@@ -174,9 +174,8 @@ app.put('/api/requisitions/:_id',function(req,res){
         }
         res.json(requisition);
     });
-});
-//-------------
 
+});
 
 
 
