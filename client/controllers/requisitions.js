@@ -73,12 +73,12 @@ myApp.controller('RequisitionsController',['$scope','$http','$location','$routeP
 
     //--------------Sewmi-------
     $scope.acceptRequisition = function (id) {
-        $http.put('/api/approveOrders'+id),$scope.requisitions.then(sucessCallback, errorCallback);
+        $http.put('/api/requisitions'+id),$scope.requisitions.then(sucessCallback, errorCallback);
         window.location.href='#!/orders';
     }
 
     $scope.rejectRequisition = function (id) {
-        $http.put('/api/approveOrders'+id),$scope.requisitions.then(sucessCallback, errorCallback);
+        $http.put('/api/requisitions'+id),$scope.requisitions.then(sucessCallback, errorCallback);
         window.location.href='#!/orders';
     }
     $scope.getRequ = function () {
