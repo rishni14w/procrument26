@@ -7,6 +7,9 @@ angular.module("myApp").controller("LoginController",['$scope','$location',
             else if(username==='hr'){
                 $location.path('/products');
             }
+            else if(username==='accountant'){
+                $location.path('/orders');
+            }
             else{
                 alert("Incorrect username")
             }
