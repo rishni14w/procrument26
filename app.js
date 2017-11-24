@@ -12,9 +12,15 @@ Requisition = require('./models/requisition');
 
 //connect to mongoose
 // mongoose.connect('mongodb://localhost/procrument');
-mongoose.connection.openUri('mongodb://127.0.0.1/procrument');
-//MongoClient.connect('mongodb://csse_26:csse_26sysr@ds117336.mlab.com:17336/procrument26');
+//mongoose.connection.openUri('mongodb://127.0.0.1/procrument');
+//mongoose.connect('mongodb://csse_26:csse_26sysr@ds117336.mlab.com:17336/procrument26');
 //database object
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://csse_26:csse_26sysr@ds117336.mlab.com:17336/procrument26', { useMongoClient: true });
+
+
+
+//mongoose.connect('mongodb://csse_26:csse_26sysr@ds117336.mlab.com:17336/procrument26');
 var db = mongoose.connection;
 
 app.get('/',function(req,res){
