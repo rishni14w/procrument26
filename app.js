@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 Product = require('./models/product');
 Order = require('./models/order');
 Requisition = require('./models/requisition');
+Login = require('./models/login');
 
 //connect to mongoose
 // mongoose.connect('mongodb://localhost/procrument');
