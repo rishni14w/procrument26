@@ -87,7 +87,7 @@ myApp.controller('RequisitionsController',['$scope','$http','$location','$routeP
 
     $scope.rejectRequisition = function () {
         var id = $routeParams.id;
-        $http.put('/api/orders/details/'+id,$scope.requisition).then(successCallback,errorCallback);
+        $http.put('/api/orders/detail/'+id,$scope.requisition).then(successCallback,errorCallback);
         function successCallback(response)
         {
             window.location.href='#!/orders';
