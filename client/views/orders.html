@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>View Orders</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="panel panel-primary" ng-init="getRequisition()">
+    <div class="panel-heading">
+        <h3 class="panel-title">All Orders</h3>
+    </div>
+    <div class="row">
+        <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Supplier</th>
+                    <th>Required Date</th>
+                    <th>Approver</th>
+                    <th>Status</th>
+                    <th>Create Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="requisition in requisition">
+                    <td>{{requisition.category}}</td>
+                    <td>{{requisition.product}}</td>
+                    <td>{{requisition.description}}</td>
+                    <td>{{requisition.quantity}}</td>
+                    <td>{{requisition.supplier}}</td>
+                    <td>{{requisition.requiredDate}}</td>
+                    <td>{{requisition.approver}}</td>
+                    <td>{{requisition.status}}</td>
+                    <td>{{requisition.create_date}}</td>
+                    <td><a class="btn btn-primary" href="requisition._id">View</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
