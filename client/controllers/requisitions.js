@@ -74,10 +74,10 @@ myApp.controller('RequisitionsController',['$scope','$http','$location','$routeP
     //--------------Sewmi-------
     $scope.acceptRequisition = function () {
         var id = $routeParams.id;
-        $http.put('/api/requisitions/'+id,$scope.requisition).then(successCallback,errorCallback);
+        $http.put('/api/orders/details/'+id,$scope.requisition).then(successCallback,errorCallback);
         function successCallback(response)
         {
-            window.location.href='#!/requisitions';
+            window.location.href='#!/orders';
         }
         function errorCallback(error)
         {
@@ -87,16 +87,17 @@ myApp.controller('RequisitionsController',['$scope','$http','$location','$routeP
 
     $scope.rejectRequisition = function () {
         var id = $routeParams.id;
-        $http.put('/api/requisitions/'+id,$scope.requisition).then(successCallback,errorCallback);
+        $http.put('/api/orders/details/'+id,$scope.requisition).then(successCallback,errorCallback);
         function successCallback(response)
         {
-            window.location.href='#!/requisitions';
+            window.location.href='#!/orders';
         }
         function errorCallback(error)
         {
             console.log('err from updateRequisition')
         }
     }
+
 
     $scope.getRequ = function () {
         var id = $routeParams.id;
