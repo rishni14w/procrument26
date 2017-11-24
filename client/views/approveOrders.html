@@ -1,0 +1,24 @@
+<div class="panel panel-primary" ng-init="getRequisitions()">
+    <div class="panel-heading">
+        <h3 class="panel-title">Requisition Details</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li class="list-group-item">Category    : {{requisition.category}}</li>
+                    <li class="list-group-item">Product     : {{requisition.product}}</li>
+                    <li class="list-group-item">Description : {{requisition.description}}</li>
+                    <li class="list-group-item">Quantity    : {{requisition.quantity}}</li>
+                    <li class="list-group-item">Supplier    : {{requisition.supplier}}</li>
+                    <li class="list-group-item">RequiredDate: {{requisition.requiredDate}}</li>
+                    <li class="list-group-item">Approver    : {{requisition.approver}}</li>
+                    <li class="list-group-item">Status      : {{requisition.status}}</li>
+                    <li class="list-group-item">Create Date : {{requisition.create_date}}</li>
+                </ul>
+                <a href="#!" ng-click="acceptRequisition(requestition._id)" class="btn btn-default">Accept</a>
+                <a href="#!" ng-click="rejectRequisition(requestition._id)" class="btn btn-danger">Reject</a>
+            </div>
+        </div>
+    </div>
+</div>
