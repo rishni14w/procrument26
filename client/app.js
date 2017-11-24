@@ -21,6 +21,22 @@ myApp.config(function ($routeProvider) {
             controller:'ProductsController',
             templateUrl:'views/edit_product.html'
         })
+        .when('/requisitions',{
+            controller:'RequisitionsController',
+            templateUrl:'views/requisitions.html'
+        })
+        .when('/requisitions/details/:id',{
+            controller:'RequisitionsController',
+            templateUrl:'views/requisition_details.html'
+        })
+        .when('/requisitions/add',{
+            controller:'RequisitionsController',
+            templateUrl:'views/add_requisition.html'
+        })
+        .when('/requisitions/edit/:id',{
+            controller:'RequisitionsController',
+            templateUrl:'views/edit_requisition.html'
+        })
         .otherwise({
             redirectTo:'/'
         });

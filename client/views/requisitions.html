@@ -1,0 +1,65 @@
+<a class="btn btn-primary" href="#!/requisitions/add">Add</a>
+<br>
+<br>
+<div class="table-responsive">
+    <div class="panel panel-primary" ng-init="getRequisitions()">
+        <div class="panel-heading" style="font-family: Calibri;font-size: 25px">Requisitions</div>
+        <div class="panel-body" style="overflow-x:auto;overflow-y:auto">
+            <table class="table table-striped" style="width:100%;white-space:nowrap;border: 1px solid #dddddd">
+                <thead style="border: 1px solid #dddddd">
+                <tr>
+                    <th style="border: 1px solid #dddddd">Category</th>
+                    <th style="border: 1px solid #dddddd">Product</th>
+                    <th style="border: 1px solid #dddddd">Description</th>
+                    <th style="border: 1px solid #dddddd">Quantity</th>
+                    <th style="border: 1px solid #dddddd">Supplier</th>
+                    <th style="border: 1px solid #dddddd">Required Date</th>
+                    <th style="border: 1px solid #dddddd">Approver</th>
+                    <th style="border: 1px solid #dddddd">Status</th>
+                    <th style="border: 1px solid #dddddd">Created Date</th>
+                </tr>
+                </thead>
+                <tbody style="border: 1px solid #dddddd">
+                <tr ng-repeat="requisition in requisitions">
+                    <td style="border: 1px solid #dddddd">{{requisition.category}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.product}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.description}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.quantity}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.supplier}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.requiredDate}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.approver}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.status}}</td>
+                    <td style="border: 1px solid #dddddd">{{requisition.create_date}}</td>
+                    <td style="border: 1px solid #dddddd"><a class="btn btn-primary" href="#!/requisitions/edit/{{requisition._id}}">Edit</a></td>
+                    <td style="border: 1px solid #dddddd"><a class="btn btn-danger" href="#!" ng-click="removeRequisition(requisition._id)">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+<!--<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Requisitions</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="requisition in requisitions">
+                <div class="col-md-6">
+                    <div class="col-md-6">
+
+
+                        &lt;!&ndash;<h3>{{product.name}}</h3>
+                        <p>{{product.description}}</p>
+                        <a class="btn btn-primary" href="#!/products/details/{{product._id}}">View Details</a>&ndash;&gt;
+                    </div>
+                    &lt;!&ndash;<div class="col-md-6">
+                        <img class="thumbnail" src="{{product.image_url}}">
+                    </div>&ndash;&gt;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
