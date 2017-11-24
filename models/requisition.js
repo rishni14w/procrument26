@@ -27,7 +27,8 @@ var requisitionSchema = mongoose.Schema({
         type:String
     },
     status:{
-        type:String
+        type:String,
+        default:'Pending'
     },
     create_date:{
         type:Date,
@@ -63,8 +64,7 @@ module.exports.updateRequisition = function (id,requisition,options,callback) {
         quantity: requisition.quantity,
         supplier: requisition.supplier,
         requiredDate: requisition.requiredDate,
-        approver: requisition.approver,
-        status: requisition.status
+        approver: requisition.approver
     };
     Requisition.findOneAndUpdate(query,update,options,callback);
 };
