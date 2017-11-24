@@ -162,9 +162,9 @@ app.put('/api/orders/details/:_id',function(req,res){
         }
         res.json(requisition);
     });
-
 });
-app.put('/api/orders/details/:_id',function(req,res){
+
+app.put('/api/orders/detail/:_id',function(req,res){
     var id=req.params._id;
     var requisition = req.body;
     Requisition.rejectRequisition(id,requisition,{}, function (err,requisition) {
@@ -174,7 +174,6 @@ app.put('/api/orders/details/:_id',function(req,res){
         }
         res.json(requisition);
     });
-
 });
 
 
