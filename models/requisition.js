@@ -75,17 +75,25 @@ module.exports.deleteRequisition = function (id,callback) {
     Requisition.remove(query,callback);
 };
 
+
 //--------------Sewmi-------
 //ApproveRequestion
-module.exports.acceptRequisition= function(id, requisition,callback){
+module.exports.acceptRequisition = function (id,requisition,options,callback) {
     var query={_id:id};
-    var update={approver:"Accountant",status:"Approved"};
+    var update={
+        // approver: requisition.approver
+        status: "Approved"
+    };
     Requisition.findOneAndUpdate(query,update,options,callback);
-}
-//RejectRequestion
-module.exports.rejectRequisition= function(id, requisition,callback){
+};
+//ApproveRequestion
+module.exports.rejectRequisition = function (id,requisition,options,callback) {
     var query={_id:id};
-    var update={approver:"Accountant",status:"Rejected"};
+    var update={
+        // approver: requisition.approver
+        status: "Rejected"
+    };
     Requisition.findOneAndUpdate(query,update,options,callback);
-}
+};
+
 //-------------
