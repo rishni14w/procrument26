@@ -58,6 +58,10 @@ myApp.config(function ($routeProvider) {
             templateUrl:'views/pending_order.html'
         })
 
+        .when('/order/edit/:id',{
+            controller:'OrderController',
+            templateUrl:'views/add_order.html'
+        })
 
         .otherwise({
             redirectTo:'/'
