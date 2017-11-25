@@ -9,7 +9,7 @@
                 <form ng-submit="updateRequisition()" ng-init="getRequisition()">
                     <div class="form-group">
                         <label>Category</label>
-                        <select ng-model="requisition.category" class="form-control">
+                        <select ng-model="requisition.category" class="form-control" style="height: auto">
                             <option value="Steel">Steel</option>
                             <option value="Metal">Metal</option>
                             <option value="Cement">Cement</option>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-group">
                         <label>Supplier</label>
-                        <select ng-model="requisition.supplier" class="form-control">
+                        <select ng-model="requisition.supplier" class="form-control" style="height: auto">
                             <option value="Kularathna Ltd">Kularathna Ltd</option>
                             <option value="hardware pvt Ltd">hardware pvt Ltd</option>
                             <option value="Other">Other</option>
@@ -43,21 +43,21 @@
                     </div>
                     <div class="form-group">
                         <label>Approver</label>
-                        <select ng-model="requisition.approver" class="form-control">
+                        <select ng-model="requisition.approver" class="form-control" style="height: auto">
                             <option value="Kanthi Perera">Kanthi Perera</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label>Status</label>
                         <input type="text" class="form-control"ng-model="requisition.status" placeholder="Enter status">
                     </div>
-                    <!--<div class="form-check">
+                    &lt;!&ndash;<div class="form-check">
                         <label class="form-check-label">
                             <input type="checkbox" class="form-check-input">
                             Check me out
                         </label>
-                    </div>-->
+                    </div>&ndash;&gt;-->
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
