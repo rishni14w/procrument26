@@ -1,0 +1,52 @@
+<div id="navbar" class="navbar-header">
+    <nav class="navbar navbar-primary">
+
+        <a href="#!/receipt" class="thumbnail">Go Back</a>
+        <a href="#!/login" class="thumbnail">Logout</a>
+    </nav>
+</div>
+
+
+<br>
+<br>
+<div class="table-responsive">
+    <div class="panel panel-primary"  ng-init="getReceipts()">
+        <div class="panel-heading" style="font-family: Calibri;font-size: 25px">Payment Approval</div>
+        <div class="panel-body" style="overflow-x:auto;overflow-y:auto">
+            <table class="table table-striped" style="width:100%;white-space:nowrap;border: 1px solid #dddddd">
+                <thead style="border: 1px solid #dddddd">
+                <tr>
+                    <th style="border: 1px solid #dddddd">OrderID</th>
+                    <th style="border: 1px solid #dddddd">Supplier</th>
+                    <th style="border: 1px solid #dddddd">Product</th>
+                    <th style="border: 1px solid #dddddd">Quantity</th>
+                    <th style="border: 1px solid #dddddd">Unit Price</th>
+                    <th style="border: 1px solid #dddddd">Delivery</th>
+                    <th style="border: 1px solid #dddddd">To be Payed</th>
+                    <th style="border: 1px solid #dddddd">Receipt Status</th>
+                    <th style="border: 1px solid #dddddd">Payment Status</th>
+                    <th style="border: 1px solid #dddddd">Approval</th>
+                </tr>
+                </thead>
+                <tbody style="border: 1px solid #dddddd">
+                <tr ng-repeat="ReceiptModel in goodsReceipt">
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.supplier}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.orderID}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.product}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.quantity}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.unitprice}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.delivery}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.toPay}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.rstatus}}</td>
+                    <td style="border: 1px solid #dddddd">{{ReceiptModel.pstatus}}</td>
+                    <td style="border: 1px solid #dddddd"><button type="submit" class="btn btn-primary" onclick="editApproval()">Approve</button></td>
+                    <td style="border: 1px solid #dddddd"><button type="submit" class="btn btn-primary" onclick="editApproval()">Denied</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
