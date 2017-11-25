@@ -5,6 +5,35 @@ var myApp = angular.module('myApp');
 myApp.controller('OrderController',['$scope','$http','$location','$routeParams',function ($scope,$http,$location,$routeParams) {
     console.log('OrderController loaded');
 
+
+    $scope.getRequisition = function () {
+        var id = $routeParams.id;
+        $http.get('/api/requisitions/'+id).then(successCallback,errorCallback);
+        function successCallback(response)
+        {
+            $scope.requisition=response.data;
+            console.log(response.data);
+        }
+        function errorCallback(error)
+        {
+            console.log('err from getRequisition')
+        }
+    }
+
+    $scope.updateOrder = function () {
+        var id = $routeParams.id;
+        $http.put('/api/order/'+id,$scope.requisition).then(successCallback,errorCallback);
+        function successCallback(response)
+        {
+            window.location.href='#!/order';
+        }
+        function errorCallback(error)
+        {
+            console.log('err from updateRequisition')
+        }
+    }
+
+
     $scope.getRequisitions = function () {
         $http.get('/api/requisitions').then(successCallback,errorCallback);
         function successCallback(response)
