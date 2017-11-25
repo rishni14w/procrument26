@@ -1,0 +1,123 @@
+<div id="navbar" class="navbar-header">
+    <nav class="navbar navbar-primary">
+        <a href="#!/requisitions/" class="thumbnail">Requisitions</a>
+        <a href="#!/products" class="thumbnail">Product</a>
+        <a href="#!/order" class="thumbnail">Purchase order</a>
+        <a href="#!/payment" class="thumbnail">View Approval</a>
+        <a href="#!/login" class="thumbnail">Logout</a>
+    </nav>
+</div>
+
+
+<br>
+<br>
+<div class="table-responsive">
+    <div class="panel panel-primary" ng-init="getOrders()">
+        <div class="panel-heading" style="font-family: Calibri;font-size: 25px">Invoice Checking</div>
+        <div class="panel-body" style="overflow-x:auto;overflow-y:auto">
+            <table class="table table-striped" style="width:100%;white-space:nowrap;border: 1px solid #dddddd">
+                <thead style="border: 1px solid #dddddd">
+                <tr>
+                    <th style="border: 1px solid #dddddd">OrderID</th>
+                    <th style="border: 1px solid #dddddd">Supplier</th>
+                    <th style="border: 1px solid #dddddd">Product</th>
+                    <th style="border: 1px solid #dddddd">Quantity</th>
+                    <th style="border: 1px solid #dddddd">Unit Price</th>
+                    <th style="border: 1px solid #dddddd">Status</th>
+                    <th style="border: 1px solid #dddddd">Approval</th>
+
+                </tr>
+                </thead>
+                <tbody style="border: 1px solid #dddddd">
+                <tr ng-repeat="order in order">
+                    <td style="border: 1px solid #dddddd">{{order.orderID}}</td>
+                    <td style="border: 1px solid #dddddd">{{order.supplier}}</td>
+                    <td style="border: 1px solid #dddddd">{{order.product}}</td>
+                    <td style="border: 1px solid #dddddd">{{order.quantity}}</td>
+                    <td style="border: 1px solid #dddddd">{{order.price}}</td>
+                    <td style="border: 1px solid #dddddd">{{order.status}}</td>
+                    <td style="border: 1px solid #dddddd"><button type="submit" class="btn btn-primary" onclick="editApproval()">Submit</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Confirm Invoice</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form ng-submit="approveReceipt()" ng-init="getOrder()">
+                    <table>
+                        <tr>
+                            <td><label>OrderID       :</label></td>
+                            <td><input ng-model="ReceiptModel.category"></td>
+                        </tr>
+
+                    <tr>
+                        <td><label>Product            : </label></td>
+                        <td><input ng-model="ReceiptModel.product"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Supplier           : </label></td>
+                        <td><input ng-model="ReceiptModel.supplier"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Quantity           : </label></td>
+                        <td><input ng-model="ReceiptModel.quantity"></td>
+
+                    </tr>
+                        <tr>
+                            <td><label>Unit Price           : </label></td>
+                            <td><input ng-model="ReceiptModel.price"></td>
+                        </tr>
+                    <tr>
+                        <td><label>Delivery           : </label></td>
+                        <td><select ng-model="ReceiptModel.supplier" class="form-control">
+                            <option value="Kularathna Ltd">Full Delivery</option>
+                            <option value="hardware pvt Ltd">Partial Delivery</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label>Quantity Delivered : </label></td>
+                        <td><input type="text" ng-model="ReceiptModel.deliveredqty"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Remaning Quantity  : </label></td>
+                        <td><input type="text" ng-model="ReceiptModel.remainingqty"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label>To be Paid         : </label></td>
+                        <td><input type="text" ng-model="ReceiptModel.toPay"></td>>
+                    </tr>
+                        <tr>
+                            <td><label>Approval         : </label></td>
+                            <td><select ng-model="ReceiptModel.supplier" class="form-control">
+                                <option value="Kularathna Ltd">Approved</option>
+                                <option value="hardware pvt Ltd">Denied</option>
+                            </select></td>>
+                        </tr>
+                        <tr><br></tr>
+                    <tr>
+                        <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                        <td><button type="submit" class="btn btn-primary" onclick="clear()">Clear</button></td>
+                    </tr>
+                    </table>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
