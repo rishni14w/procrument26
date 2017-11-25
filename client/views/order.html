@@ -1,0 +1,76 @@
+<div id="navbar" class="navbar-header">
+    <nav class="navbar navbar-primary">
+        <a href="#!/order/" class="thumbnail">Orders</a>
+        <!--   <a href="#!/products" class="thumbnail">Product</a>-->
+           <a href="#!/login" class="thumbnail">Logout</a>
+        <a href="#!/orderadd" class="thumbnail">Add order</a>
+
+    </nav>
+   </div>
+
+   <a class="btn btn-primary" href="#!/order/create" style="float: right">Create Order</a>
+   <br>
+   <br>
+   <div class="table-responsive">
+       <div class="panel panel-primary" ng-init="getRequisitions()">
+           <div class="panel-heading" style="font-family: Calibri;font-size: 25px">Orders</div>
+           <div class="panel-body" style="overflow-x:auto;overflow-y:auto">
+               <table class="table table-striped" style="width:100%;white-space:nowrap;border: 1px solid #dddddd">
+                   <thead style="border: 1px solid #dddddd">
+                   <tr>
+                       <th style="border: 1px solid #dddddd">Order Ref No</th>
+                       <th style="border: 1px solid #dddddd">Created Date</th>
+                       <th style="border: 1px solid #dddddd">Delivery Address</th>
+                       <th style="border: 1px solid #dddddd">Item</th>
+                       <th style="border: 1px solid #dddddd">Quantity</th>
+                       <th style="border: 1px solid #dddddd">Supplier</th>
+                       <th style="border: 1px solid #dddddd">Required Date</th>
+                       <th style="border: 1px solid #dddddd">Price</th>
+                       <!-- <th style="border: 1px solid #dddddd">Status</th>-->
+                       <!--  <th style="border: 1px solid #dddddd">Created Date</th> -->
+                   </tr>
+                   </thead>
+                   <tbody style="border: 1px solid #dddddd">
+                   <tr ng-repeat="requisition in requisitions">
+                       <td style="border: 1px solid #dddddd">{{order.orderid}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.createdDate}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.deliveryAddress}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.quantity}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.supplier}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.requiredDate}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.approver}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.status}}</td>
+                       <td style="border: 1px solid #dddddd">{{order.create_date}}</td>
+                       <td style="border: 1px solid #dddddd"><a class="btn btn-primary" href="#!/requisitions/edit/{{requisition._id}}">Edit</a></td>
+                       <td style="border: 1px solid #dddddd"><a class="btn btn-danger" href="#!" ng-click="removeRequisition(requisition._id)">Delete</a></td>
+                   </tr>
+                   </tbody>
+               </table>
+
+           </div>
+       </div>
+
+   </div>
+   <!--<div class="panel panel-primary">
+       <div class="panel-heading">
+           <h3 class="panel-title">Requisitions</h3>
+       </div>
+       <div class="panel-body">
+           <div class="row">
+               <div ng-repeat="requisition in requisitions">
+                   <div class="col-md-6">
+                       <div class="col-md-6">
+
+
+                           &lt;!&ndash;<h3>{{product.name}}</h3>
+                           <p>{{product.description}}</p>
+                           <a class="btn btn-primary" href="#!/products/details/{{product._id}}">View Details</a>&ndash;&gt;
+                       </div>
+                       &lt;!&ndash;<div class="col-md-6">
+                           <img class="thumbnail" src="{{product.image_url}}">
+                       </div>&ndash;&gt;
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>-->
