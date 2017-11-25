@@ -57,7 +57,14 @@ myApp.config(function ($routeProvider) {
             controller:'OrderController',
             templateUrl:'views/pending_order.html'
         })
-
+        .when('/receipt',{
+            controller:'goodsReceiptController',
+            templateUrl:'views/goods_receipt.html'
+        })
+        .when('/payment',{
+            controller:'goodsReceiptController',
+            templateUrl:'views/payment.html'
+        })
 
         .otherwise({
             redirectTo:'/'
