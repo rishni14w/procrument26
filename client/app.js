@@ -63,6 +63,14 @@ myApp.config(function ($routeProvider) {
             templateUrl:'views/add_order.html'
         })
 
+        .when('/receipt',{
+            controller:'goodsReceiptController',
+            templateUrl:'views/goods_receipt.html'
+        })
+        .when('/payment',{
+            controller:'goodsReceiptController',
+            templateUrl:'views/payment.html'
+        })
         .otherwise({
             redirectTo:'/'
         });
